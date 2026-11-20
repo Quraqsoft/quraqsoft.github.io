@@ -3,7 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Qural — программы для школ</title>
+<title>Qonyrau — программа для школьных звонков по расписанию | Qural</title>
+<meta name="description" content="Qonyrau — программа автоматических школьных звонков для школ Казахстана: звонки по расписанию, гимн РК по понедельникам, музыка на переменах, кнопка эвакуации. На казахском, русском и английском. 30 дней бесплатно.">
+<meta name="keywords" content="программа школьный звонок, автоматический звонок в школе, расписание звонков, школьный звонок Казахстан, мектеп қоңырауы бағдарламасы, қоңырау кестесі, Qonyrau">
+<link rel="canonical" href="https://quraqsoft.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quraqsoft.github.io/">
+<meta property="og:title" content="Qonyrau — программа для школьных звонков">
+<meta property="og:description" content="Автоматические звонки по расписанию, гимн РК и музыка на переменах. 30 дней бесплатно.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="kk_KZ">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"SoftwareApplication","name":"Qonyrau","alternateName":"Қоңырау","applicationCategory":"EducationalApplication","operatingSystem":"Windows 10, Windows 11",
+  "description":"Программа автоматических школьных звонков по расписанию: звонки на урок и с урока, гимн РК, музыка на переменах, кнопка эвакуации. Интерфейс на казахском, русском и английском.",
+  "inLanguage":["kk","ru","en"],"softwareVersion":"1.8.1","url":"https://quraqsoft.github.io/#qonyrau",
+  "downloadUrl":"https://github.com/Quraqsoft/quraqsoft.github.io/releases/latest/download/Qonyrau-Setup.exe",
+  "author":{"@type":"Person","name":"Олжас Балабаев"},"publisher":{"@type":"Organization","name":"Qural","url":"https://quraqsoft.github.io/"},
+  "countriesSupported":"KZ"},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Как сделать, чтобы школьные звонки звенели автоматически?","acceptedAnswer":{"@type":"Answer","text":"Установите Qonyrau на компьютер, к которому подключены колонки или микшер школы, впишите время уроков — программа сама даёт звонки на урок и с урока каждый день по расписанию."}},
+  {"@type":"Question","name":"Нужен ли интернет для программы школьных звонков?","acceptedAnswer":{"@type":"Answer","text":"Нет. Qonyrau работает без интернета. Интернет нужен только чтобы сверить точное время, если эта функция включена."}},
+  {"@type":"Question","name":"Можно ли включать гимн РК только по понедельникам?","acceptedAnswer":{"@type":"Answer","text":"Да. В разделе «Музыка по времени» выберите время, дни недели и файл гимна — он будет играть только в выбранные дни."}},
+  {"@type":"Question","name":"Есть ли программа звонков на казахском языке?","acceptedAnswer":{"@type":"Answer","text":"Да. Интерфейс Qonyrau переключается между казахским, русским и английским одной кнопкой."}},
+  {"@type":"Question","name":"Сколько стоит программа школьных звонков Qonyrau?","acceptedAnswer":{"@type":"Answer","text":"Первые 30 дней — бесплатно со всеми функциями. Стоимость ключа для школы — по запросу в WhatsApp."}}
+ ]}]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap&subset=cyrillic-ext" rel="stylesheet">
@@ -104,12 +129,16 @@ nav a:hover{background:var(--paper);color:var(--ink)}
 .lic h3{margin:22px 0 6px;font-size:16px}
 .lic ul{margin:0;padding-left:20px;display:grid;gap:6px}
 .lic p{margin-top:10px}
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px;align-items:start}
+.faq details{border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.faq summary{cursor:pointer;font-weight:600;min-height:28px}
+.faq p{margin-top:8px;color:var(--mut)}
 /* автор */
 .author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start}
 .avatar{width:120px;height:120px;border-radius:28px;background:linear-gradient(180deg,#0A86A3,#00627A);color:#fff;display:grid;place-items:center;font:700 40px Unbounded,sans-serif;position:relative}
 .avatar::after{content:"";position:absolute;inset:8px;border-radius:22px;border:2px solid var(--gold);opacity:.8}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(14em,1fr));gap:12px;margin-top:16px}
-.facts div{background:var(--paper);border-radius:14px;padding:14px 16px}
+.facts div{background:var(--bg);border-radius:14px;padding:14px 16px}
 .facts b{display:block;font:700 22px Unbounded,sans-serif;color:var(--teal)}
 :root[data-theme=dark] .facts b{color:#5FD0EA}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]) .facts b{color:#5FD0EA}}
@@ -123,7 +152,7 @@ footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-bet
 @media(max-width:860px){
  .hero-top,.cat,.feat,.feat.rev,.contact .wrap{grid-template-columns:minmax(0,1fr)}
  .feat.rev .txt{order:0}
- .steps,.smart{grid-template-columns:minmax(0,1fr)}
+ .steps,.smart,.faq{grid-template-columns:minmax(0,1fr)}
  nav{order:3;width:100%;margin-left:0}
  .lang{margin-left:auto}
 }
@@ -168,7 +197,7 @@ footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-bet
   <div class="hero-top">
    <div style="display:grid;gap:16px">
     <h1 data-t="heroTitle">Программы для школ Казахстана</h1>
-    <p class="lead" data-t="heroLead">Qural — инструменты для повседневной работы школы.</p>
+    <p class="lead" data-t="heroLead">Qural — инструменты для повседневной работы школы. Первая программа — Qonyrau: автоматические школьные звонки по расписанию.</p>
    </div>
    <div style="display:grid;gap:10px;justify-items:start">
     <div class="acts">
@@ -285,6 +314,19 @@ footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-bet
  </div>
 </section>
 
+<section class="band" id="faq">
+ <div class="wrap">
+  <div class="sec-head"><h2 data-t="faqTitle">Частые вопросы</h2></div>
+  <div class="faq">
+   <details><summary data-t="q1">Как сделать, чтобы школьные звонки звенели автоматически?</summary><p data-t="a1">Установите Qonyrau на компьютер, к которому подключены колонки или микшер школы, впишите время уроков — программа сама даёт звонки на урок и с урока каждый день по расписанию.</p></details>
+   <details><summary data-t="q2">Нужен ли интернет?</summary><p data-t="a2">Нет. Qonyrau работает без интернета. Интернет нужен только чтобы сверить точное время, если эта функция включена.</p></details>
+   <details><summary data-t="q3">Можно ли включать гимн РК только по понедельникам?</summary><p data-t="a3">Да. В разделе «Музыка по времени» выберите время, дни недели и файл гимна — он будет играть только в выбранные дни.</p></details>
+   <details><summary data-t="q4">Есть ли программа на казахском языке?</summary><p data-t="a4">Да. Интерфейс переключается между казахским, русским и английским одной кнопкой.</p></details>
+   <details><summary data-t="q5">Что будет, если компьютер выключат?</summary><p data-t="a5">Пока компьютер выключен, звонков не будет. Программа запускается вместе с Windows и не даёт компьютеру уснуть, а после включения сразу продолжает работу по расписанию.</p></details>
+   <details><summary data-t="q6">Сколько стоит?</summary><p data-t="a6">Первые 30 дней — бесплатно со всеми функциями. Стоимость ключа для школы — по запросу в WhatsApp.</p></details>
+  </div>
+ </div>
+</section>
 <section class="band paper" id="author">
  <div class="wrap author">
   <div class="avatar" aria-hidden="true">ОБ</div>
@@ -358,7 +400,7 @@ const T = {
  kk: {
   navPrograms:'Бағдарламалар', navBuy:'Қалай сатып алу', navAuthor:'Автор туралы', navContact:'Байланыс',
   heroTitle:'Қазақстан мектептеріне арналған бағдарламалар',
-  heroLead:'Qural — мектептің күнделікті жұмысына арналған құралдар.',
+  heroLead:'Qural — мектептің күнделікті жұмысына арналған құралдар. Алғашқы бағдарлама — Qonyrau: кесте бойынша автоматты мектеп қоңыраулары.',
   dlQonyrau:'Qonyrau жүктеу', askWa:'WhatsApp-қа жазу', heroNote:'30 күн тегін, барлық мүмкіндіктер. Windows 10 және 11.',
   progTitle:'Бағдарламалар', progLead:'Әр бағдарлама мектептің бір міндетін шешеді және кәдімгі мектеп компьютерінде жұмыс істейді.',
   tagReady:'Қолжетімді', tagVer:'1.8 нұсқа',
@@ -386,6 +428,13 @@ const T = {
   authTitle:'Олжас Балабаев', authText:'Алматыдағы мектеп директорының тәрбие ісі жөніндегі орынбасары және педагог-психолог. Qural бағдарламалары нақты мектеп міндеттерінен туды: алдымен менің мектебімде жұмыс істейді, содан кейін сізге келеді.',
   fa2B:'ДТІО', fa2:'директордың тәрбие ісі жөніндегі орынбасары', fa3B:'Магистр', fa3:'педагогика және психология',
   cTitle:'Сұрақтар, кілт, баптауға көмек', cText:'WhatsApp-қа жазыңыз — бағдарламаны орнатуға және кестеңізді көшіруге көмектесемін.',
+  faqTitle:'Жиі қойылатын сұрақтар',
+  q1:'Мектеп қоңыраулары автоматты түрде соғылуы үшін не істеу керек?', a1:'Qonyrau бағдарламасын мектептің колонкалары немесе микшері қосылған компьютерге орнатып, сабақ уақытын енгізіңіз — бағдарлама күн сайын кесте бойынша сабаққа және сабақтан қоңырауды өзі береді.',
+  q2:'Интернет қажет пе?', a2:'Жоқ. Qonyrau интернетсіз жұмыс істейді. Интернет тек дәл уақытты тексеру үшін керек, егер бұл функция қосулы болса.',
+  q3:'ҚР Әнұранын тек дүйсенбі сайын қосуға бола ма?', a3:'Иә. «Уақыт бойынша музыка» бөлімінде уақытты, апта күндерін және әнұран файлын таңдаңыз — ол тек таңдалған күндері ойналады.',
+  q4:'Қазақ тіліндегі бағдарлама бар ма?', a4:'Иә. Интерфейс қазақ, орыс және ағылшын тілдері арасында бір батырмамен ауысады.',
+  q5:'Компьютер өшіп қалса не болады?', a5:'Компьютер өшірулі тұрғанда қоңырау болмайды. Бағдарлама Windows-пен бірге іске қосылады және компьютердің ұйықтауына жол бермейді, ал қосылған соң кесте бойынша жұмысын бірден жалғастырады.',
+  q6:'Бағасы қанша?', a6:'Алғашқы 30 күн — барлық мүмкіндіктерімен тегін. Мектепке арналған кілттің бағасы — WhatsApp арқылы.',
   smTitle:'Windows ескерту көрсетсе', smText:'Ақылы цифрлық қолтаңбасы жоқ жаңа бағдарламаларға Windows кейде «Windows компьютеріңізді қорғады» деген көк терезе көрсетеді. Бұл вирус емес — Windows кез келген аз танымал бағдарламаға осылай жауап береді.',
   sm1:'Көк терезеде «Толығырақ» (Подробнее) батырмасын басыңыз.', sm2:'«Бәрібір іске қосу» (Выполнить в любом случае) батырмасы шығады — соны басыңыз.', sm3:'Браузер «Файл сирек жүктеледі» деп жазса, «…» → «Сақтау» → «Бәрібір сақтау» басыңыз.',
   licTitle:'Лицензиялық келісім', licLangNote:'Келісім мәтіні орыс тілінде берілген.',
@@ -410,6 +459,7 @@ const apply = l => {
   a.href = wa(T[l].waDl);
   const s = a.querySelector('span'); if (s) s.textContent = T[l].dlWa;
  }
+ document.title = l === 'kk' ? 'Qonyrau — мектеп қоңырауларына арналған бағдарлама | Qural' : 'Qonyrau — программа для школьных звонков по расписанию | Qural';
  const ln = document.querySelector('[data-t=licLangNote]'); if (ln) ln.hidden = l !== 'kk';
  const hs = document.getElementById('hero-shot'); if (hs) hs.src = hs.dataset[l];
  try { localStorage.setItem('qural-lang', l); } catch (e) {}
