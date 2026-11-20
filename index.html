@@ -19,7 +19,7 @@
   "description":"Программа автоматических школьных звонков по расписанию: звонки на урок и с урока, гимн РК, музыка на переменах, кнопка эвакуации. Интерфейс на казахском, русском и английском.",
   "inLanguage":["kk","ru","en"],"softwareVersion":"1.8.1","url":"https://quraqsoft.github.io/#qonyrau",
   "downloadUrl":"https://github.com/Quraqsoft/quraqsoft.github.io/releases/latest/download/Qonyrau-Setup.exe",
-  "author":{"@type":"Person","name":"Олжас Балабаев"},"publisher":{"@type":"Organization","name":"Qural","url":"https://quraqsoft.github.io/"},
+  "author":{"@type":"Organization","name":"Qural"},"publisher":{"@type":"Organization","name":"Qural","url":"https://quraqsoft.github.io/"},
   "countriesSupported":"KZ"},
  {"@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"Как сделать, чтобы школьные звонки звенели автоматически?","acceptedAnswer":{"@type":"Answer","text":"Установите Qonyrau на компьютер, к которому подключены колонки или микшер школы, впишите время уроков — программа сама даёт звонки на урок и с урока каждый день по расписанию."}},
@@ -38,7 +38,7 @@
    PICTURE the real Qonyrau window, large, sitting on the teal band
    COLOUR teal #00708B ground for bands, white paper, gold #F5B800 accent; night: deep teal-black
    TYPE   Unbounded for names and titles, Onest for text (both from the Qonyrau app)
-   LAYOUT header, teal band with title across the top and the app window beneath; then catalog, features beside screenshots, steps, author, contact */
+   LAYOUT header, teal band with title across the top and the app window beneath; then catalog, features beside screenshots, steps, why Qural, faq, contact */
 :root{color-scheme:light dark;--bg:light-dark(#ffffff,#0b1d22);--paper:light-dark(#F3F9FA,#11292f);--ink:light-dark(#12303B,#E6F1F3);--mut:light-dark(#4F6670,#9FB7BE);--line:light-dark(#D4E6EB,#24434b);--teal:#00708B;--teal2:#004E61;--gold:#F5B800;--goldSoft:light-dark(#FFF0BF,#3a3110);--goldInk:light-dark(#6B4E00,#FFD866);--wa:#128C4A}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
@@ -133,15 +133,10 @@ nav a:hover{background:var(--paper);color:var(--ink)}
 .faq details{border:1px solid var(--line);border-radius:14px;padding:14px 18px}
 .faq summary{cursor:pointer;font-weight:600;min-height:28px}
 .faq p{margin-top:8px;color:var(--mut)}
-/* автор */
-.author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start}
-.avatar{width:120px;height:120px;border-radius:28px;background:linear-gradient(180deg,#0A86A3,#00627A);color:#fff;display:grid;place-items:center;font:700 40px Unbounded,sans-serif;position:relative}
-.avatar::after{content:"";position:absolute;inset:8px;border-radius:22px;border:2px solid var(--gold);opacity:.8}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(14em,1fr));gap:12px;margin-top:16px}
-.facts div{background:var(--bg);border-radius:14px;padding:14px 16px}
-.facts b{display:block;font:700 22px Unbounded,sans-serif;color:var(--teal)}
-:root[data-theme=dark] .facts b{color:#5FD0EA}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .facts b{color:#5FD0EA}}
+/* почему */
+.why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:26px}
+.why>div{background:var(--bg);border-radius:18px;padding:22px;display:grid;gap:8px;align-content:start}
+.wi{width:56px;height:56px;border-radius:14px;background:linear-gradient(180deg,#0A86A3,#00627A);color:#fff;display:grid;place-items:center;font:700 14px Unbounded,sans-serif;box-shadow:inset 0 0 0 2px rgba(245,184,0,.7);margin-bottom:4px}
 /* контакты */
 .contact{background:var(--teal2);color:#fff}
 .contact .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px;align-items:center}
@@ -153,6 +148,7 @@ footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-bet
  .hero-top,.cat,.feat,.feat.rev,.contact .wrap{grid-template-columns:minmax(0,1fr)}
  .feat.rev .txt{order:0}
  .steps,.smart,.faq{grid-template-columns:minmax(0,1fr)}
+ .why{grid-template-columns:repeat(2,minmax(0,1fr))}
  nav{order:3;width:100%;margin-left:0}
  .lang{margin-left:auto}
 }
@@ -161,8 +157,7 @@ footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-bet
  nav a{padding:8px 9px;font-size:14px;flex:none}
  .prod{grid-template-columns:minmax(0,1fr)}
  .prod img{width:64px;height:64px;border-radius:15px}
- .author{grid-template-columns:minmax(0,1fr)}
- .avatar{width:88px;height:88px;font-size:30px;border-radius:22px}
+ .why{grid-template-columns:minmax(0,1fr)}
  .btn{width:100%}
 }
 </style>
@@ -182,7 +177,7 @@ footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-bet
    <a href="#programs" data-t="navPrograms">Программы</a>
    <a href="#qonyrau">Qonyrau</a>
    <a href="#buy" data-t="navBuy">Как купить</a>
-   <a href="#author" data-t="navAuthor">Об авторе</a>
+   <a href="#why" data-t="navWhy">Почему Qural</a>
    <a href="#contact" data-t="navContact">Контакты</a>
   </nav>
   <div class="lang" role="group" aria-label="Язык">
@@ -327,16 +322,14 @@ footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-bet
   </div>
  </div>
 </section>
-<section class="band paper" id="author">
- <div class="wrap author">
-  <div class="avatar" aria-hidden="true">ОБ</div>
-  <div>
-   <h2 data-t="authTitle">Олжас Балабаев</h2>
-   <p style="margin-top:12px;max-width:68ch" data-t="authText">Заместитель директора по воспитательной работе в школе Алматы и педагог-психолог. Программы Qural появились из настоящих школьных задач: сначала они работают в моей школе, потом приходят к вам.</p>
-   <div class="facts">
-    <div><b data-t="fa2B">ЗДВР</b><span data-t="fa2">заместитель директора по воспитательной работе</span></div>
-    <div><b data-t="fa3B">Магистр</b><span data-t="fa3">педагогики и психологии</span></div>
-   </div>
+<section class="band paper" id="why">
+ <div class="wrap">
+  <div class="sec-head"><h2 data-t="whyTitle">Почему Qural</h2></div>
+  <div class="why">
+   <div><span class="wi">KZ</span><h3 data-t="w1T">Сделано для школ Казахстана</h3><p class="muted" data-t="w1">Гимн РК, праздники Казахстана, режим дня наших школ — всё учтено с первого дня.</p></div>
+   <div><span class="wi">ҚАЗ</span><h3 data-t="w2T">На казахском языке</h3><p class="muted" data-t="w2">Интерфейс на казахском, русском и английском — каждый сотрудник работает на удобном языке.</p></div>
+   <div><span class="wi">24/7</span><h3 data-t="w3T">Работает без интернета</h3><p class="muted" data-t="w3">Звонки не зависят от связи: программа работает на компьютере школы круглый год.</p></div>
+   <div><span class="wi">WA</span><h3 data-t="w4T">Помощь в WhatsApp</h3><p class="muted" data-t="w4">Поможем установить программу и перенести ваше расписание звонков.</p></div>
   </div>
  </div>
 </section>
@@ -345,7 +338,7 @@ footer .wrap{display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-bet
  <div class="wrap">
   <div style="display:grid;gap:10px">
    <h2 data-t="cTitle">Вопросы, ключ, помощь с настройкой</h2>
-   <p data-t="cText">Пишите в WhatsApp — помогу установить программу и перенести ваше расписание.</p>
+   <p data-t="cText">Пишите в WhatsApp — поможем установить программу и перенести ваше расписание.</p>
   </div>
   <div style="display:grid;gap:12px;justify-items:start">
    <span class="phone">+7 775 271 93 59</span>
@@ -398,7 +391,7 @@ const QONYRAU_URL = gh ? `https://github.com/${gh[1]}/${gh[1]}.github.io/release
 const WA = '77752719359';
 const T = {
  kk: {
-  navPrograms:'Бағдарламалар', navBuy:'Қалай сатып алу', navAuthor:'Автор туралы', navContact:'Байланыс',
+  navPrograms:'Бағдарламалар', navBuy:'Қалай сатып алу', navWhy:'Неге Qural', navContact:'Байланыс',
   heroTitle:'Қазақстан мектептеріне арналған бағдарламалар',
   heroLead:'Qural — мектептің күнделікті жұмысына арналған құралдар. Алғашқы бағдарлама — Qonyrau: кесте бойынша автоматты мектеп қоңыраулары.',
   dlQonyrau:'Qonyrau жүктеу', askWa:'WhatsApp-қа жазу', heroNote:'30 күн тегін, барлық мүмкіндіктер. Windows 10 және 11.',
@@ -425,9 +418,11 @@ const T = {
   s2T:'WhatsApp-қа жазыңыз', s2:'Мектеп пен қаланы атаңыз. Жауап беріп, төлем шарттарын жібереміз.',
   s3T:'Кілтті алыңыз', s3:'Кілт мектепке беріледі. Оны «Баптаулар» → «Лицензия» бөліміне қойыңыз — болды.',
   price:'Мектеп үшін бағасы — WhatsApp арқылы сұраңыз. Пилотқа қатысқан алғашқы мектептер кілтті жеңілдікпен алады.',
-  authTitle:'Олжас Балабаев', authText:'Алматыдағы мектеп директорының тәрбие ісі жөніндегі орынбасары және педагог-психолог. Qural бағдарламалары нақты мектеп міндеттерінен туды: алдымен менің мектебімде жұмыс істейді, содан кейін сізге келеді.',
-  fa2B:'ДТІО', fa2:'директордың тәрбие ісі жөніндегі орынбасары', fa3B:'Магистр', fa3:'педагогика және психология',
-  cTitle:'Сұрақтар, кілт, баптауға көмек', cText:'WhatsApp-қа жазыңыз — бағдарламаны орнатуға және кестеңізді көшіруге көмектесемін.',
+  cTitle:'Сұрақтар, кілт, баптауға көмек', cText:'WhatsApp-қа жазыңыз — бағдарламаны орнатуға және кестеңізді көшіруге көмектесеміз.',
+  whyTitle:'Неге Qural', w1T:'Қазақстан мектептері үшін жасалған', w1:'ҚР Әнұраны, Қазақстан мерекелері, біздің мектептердің күн тәртібі — бәрі алғашқы күннен ескерілген.',
+  w2T:'Қазақ тілінде', w2:'Интерфейс қазақ, орыс және ағылшын тілдерінде — әр қызметкер өзіне ыңғайлы тілде жұмыс істейді.',
+  w3T:'Интернетсіз жұмыс істейді', w3:'Қоңыраулар байланысқа тәуелді емес: бағдарлама мектеп компьютерінде жыл бойы жұмыс істейді.',
+  w4T:'WhatsApp арқылы көмек', w4:'Бағдарламаны орнатуға және қоңырау кестесін көшіруге көмектесеміз.',
   faqTitle:'Жиі қойылатын сұрақтар',
   q1:'Мектеп қоңыраулары автоматты түрде соғылуы үшін не істеу керек?', a1:'Qonyrau бағдарламасын мектептің колонкалары немесе микшері қосылған компьютерге орнатып, сабақ уақытын енгізіңіз — бағдарлама күн сайын кесте бойынша сабаққа және сабақтан қоңырауды өзі береді.',
   q2:'Интернет қажет пе?', a2:'Жоқ. Qonyrau интернетсіз жұмыс істейді. Интернет тек дәл уақытты тексеру үшін керек, егер бұл функция қосулы болса.',
